@@ -1,4 +1,6 @@
 # Feedback-Script
+This script based on PHP and the PHPMailer class gives students the opportunity to anonymously provide feedback to lectures, tutorial sessions etc. Once a new entry is received, an email is sent to the address specified. Additionally, the entries are recorded to a MySQL database. 
+Each feedback entry is recorded with a timestamp, and a pseudonym (if the student chose to provide one). Other than this, the script does not perform any logging. 
 
 ## Installation
 ### SMTP server
