@@ -63,3 +63,7 @@ footer {
   color: #909090;
   font-family: sans-serif;
 }
+
+footer a, iframe { /* github button */
+  padding-top: 15px;
+}
