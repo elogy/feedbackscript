@@ -33,6 +33,11 @@ function insert($name, $datum, $uhrzeit, $text, $sql_server, $sql_user, $sql_pw,
   if ($mysqli->connect_errno) {
     echo "Verbindung zur Datenbank fehlgeschlagen!";
     echo "Fehlernummer: " . $mysqli->connect_errno . "\n";
+    die();
+  }
+  if (!mysqli_query($mysqli, "SELECT 1 FROM feedback LIMIT 1;")) {
+    echo "<html><body style="font-family:sans-serif;">Tabelle nicht in Datenbank gefunden! Bitte Datenbank-Setup ausführen (siehe README). <br /> Fehlerbeschreibung: " . mysqli_error($mysqli) . "</body></html>";
+    die();
   }
   // avoid sql injection...
   $statement = $mysqli->prepare("INSERT INTO feedback (name, datum, zeit, text) VALUES (?, ?, ?, ?)");
