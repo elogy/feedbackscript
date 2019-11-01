@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
-  $data = htmlspecialchars($data);
+  $data = filter_var($data, FILTER_SANITIZE_STRING);
   return $data;
 }
 
@@ -36,7 +36,7 @@ function insert($name, $datum, $uhrzeit, $text, $sql_server, $sql_user, $sql_pw,
     die();
   }
   if (!mysqli_query($mysqli, "SELECT 1 FROM feedback LIMIT 1;")) {
-    echo "<html><body style="font-family:sans-serif;">Tabelle nicht in Datenbank gefunden! Bitte Datenbank-Setup ausführen (siehe README). <br /> Fehlerbeschreibung: " . mysqli_error($mysqli) . "</body></html>";
+    echo "<html><body style='font-family:sans-serif;'>Tabelle nicht in Datenbank gefunden! Bitte Datenbank-Setup ausführen (siehe README). <br /> Fehlerbeschreibung: " . mysqli_error($mysqli) . "</body></html>";
     die();
   }
   // avoid sql injection...
