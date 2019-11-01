@@ -5,7 +5,7 @@ body {
 }
 
 header {
-  color: #909090;
+  color: #0099FF;
   font-family: sans-serif;
   font-size: 1.5em;
   font-weight: bold;
@@ -14,8 +14,8 @@ header {
 #feedbackbox {
   margin: auto;
   padding: 20px;
-  border-radius: 10px;
-  background-color: #ededed;
+  border-radius: 8px;
+  border: 1px solid #ededed;
   width: 70%;
 }
 
@@ -32,12 +32,12 @@ header {
 }
 
 #feedbackbox textarea {
-  font-family: "Coming Soon", sans-serif;
+  font-family: sans-serif;
   min-width: 500px;
   width: 80%;
   min-height: 300px;
-  border: solid 1px;
-  border-radius: 5px;
+  border: solid 1px #b3b3b3;
+  background-color: #f2f2f2;
   margin: 10px;
   padding: 8px;
 }
@@ -45,14 +45,13 @@ header {
 #feedbackbox input[type=text] {
   margin: 5px;
   padding: 5px;
-  border-style: 1px solid orange;
+  border-style: 1px solid #b3b3b3;
 }
 
 input[type=button], input[type=submit], input[type=reset] {
-  background: green;
+  background-color: #0099FF;
   color: #ffffff;
-  border: 1px solid darkgreen;
-  border-radius: 5px;
+  border: 1px solid #0066CC;
   line-height: 1.6em;
   padding: 8px;
 }
